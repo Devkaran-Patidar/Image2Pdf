@@ -1,11 +1,8 @@
 import React from 'react';
 import { ArrowRight, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const scrollToGenerator = () => {
-    document.getElementById('generator')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section className="relative pt-24 pb-20 overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-50 via-white to-white"></div>
@@ -20,13 +17,13 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <button 
-            onClick={scrollToGenerator}
+          <Link 
+            to="/converter"
             className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-indigo-500/30 hover:-translate-y-0.5"
           >
             Start Converting
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </Link>
         </div>
 
         <div className="inline-flex items-center justify-center gap-2 text-sm text-slate-500 font-medium bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
